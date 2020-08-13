@@ -25,7 +25,7 @@ export default {
         // })
 
     //jsonp跨域
-    let url = "https://www.imooc.com/common/adver-getadver";
+    let url = "/api/member/list";  
     jsonp(url,(err,res)=>{
         this.data = res;
     })
