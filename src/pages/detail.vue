@@ -1,12 +1,12 @@
 <template>
    <div>
-    orderConfirm
+    detail
    </div>
 </template>
 <script>
 
 export default {
-    name:"order-Confirm",
+    name:"detail",
     components:{
     }
 }

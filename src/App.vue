@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import jsonp from 'jsonp'
+
 
 export default {
   data() {
@@ -19,7 +19,7 @@ export default {
   },
   name: 'App',
   components: {
-    HelloWorld
+
   }
 }
 </script>

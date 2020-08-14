@@ -1,8 +1,8 @@
 <template>
-    <div></div>
+    <div>order-herder</div>
 </template>
 <script>
 export default {
-    name:'nav-herder'
+    name:'order-herder'
 }
 </script>
