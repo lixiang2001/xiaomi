@@ -1,0 +1,18 @@
+1、cookie  localStorage  sessionStorage  三者区别的?
+    1.存储大小 ：Cookie4k Storage5M
+    2.有效期：Cookie拥有有效期， Storage永久存储
+    3.Cookie会发生到服务器端，存储在内存中。  Storage只存储在浏览器端。
+    4.路径：Cookie有路径限制，Storage只存储在域名下
+    5.Api：Cookie没有特定的Api， Storage有对应的Api
+
+
+
+    localStorage和sessionStorage的区别?
+        sessionStorage生命周期为当前窗口或标签页，一旦窗口或标签页被永久关闭了，那么所有通过sessionStorage存储的数据也就被清空了。
+        而localStorage则没有这样的特性,甚至理论上的成千上万年后都能用，除非你手动去删除.
+
+
+2、为什么要封装Storage，本身不是有API吗？
+    Storage本事有Api，但是只是简单的key/value形式
+    Storage只存储字符串，需要人工转成json对象
+    Storage只能一次性清空，不能单个清空

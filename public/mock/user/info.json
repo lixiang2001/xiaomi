@@ -1,0 +1,12 @@
+{
+    "code": 2000,
+    "flag": true,
+    "message": "获取用户信息成功",
+    "data": {
+      "id": 6008,
+      "name": "易霞",
+      "roles": [
+        "manager"
+      ]
+    }
+}
