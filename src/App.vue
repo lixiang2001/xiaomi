@@ -6,27 +6,29 @@
 
 <script>
 
-import storage from './storage/index'
+
 export default {
   data() {
     return {
-  
+      res:{}
     }
   },
   mounted(){
-    console.log(storage);
+    //请求本地文件中的json数据文件      因为是json静态文件所有在public下创建的mock文件存储json数据
+    // this.axios.get('/mock/user/info.json').then((response)=>{
+    //   this.res = response;
+    // })
 
-    storage.setItem('a',1);
-    // storage.setItem("salary",4500,"user");    //在模块中添加数据
+    //请求easyMock中的模拟接口数据
+    // this.axios.get('/member/list').then((res)=>{
+    //   console.log(res);
+    //   this.res = res;
+    // })
 
-    //storage.setItem("salary",4500,"user1");    如果在没有的模块中添加数据 就会报错
-
-    // console.log(storage.getItem('user'));    
-    // console.log(storage.getItem('a'));
-    // console.log(storage.getItem('salary'));
-
-    storage.clear('a');
-
+    //使用继承mockApi进行模拟数据  在src创建mock文件下封装的mockApi   特定就是请求的时候会被拦截所有notwoke下面是没有请求记录的
+    this.axios.get('/user/info').then((res)=>{
+      this.res = res
+    })
     
   },
   name: 'App',

@@ -6,6 +6,12 @@ import App from './App.vue'
 import store from './store'
 // import env from './env'
 
+const mock = true;
+if(mock){
+  //require和import的区别就在于 import预编译加载文件     require代码编译时加载文件，好处就是当我们mock变量为false是就不会加载mockApi文件了
+  require('./mock/api');
+}
+
 Vue.use(VueAxios,axios);     //引用插件
 Vue.config.productionTip = false
 
