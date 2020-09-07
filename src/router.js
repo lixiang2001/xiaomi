@@ -7,6 +7,8 @@ import Product from './pages/product.vue'
 import Index from './pages/index.vue'
 import Detail from './pages/detail.vue'
 
+import Login from './pages/login.vue'
+
 import Cart from './pages/cart.vue'
 
 import Order from './pages/order.vue'
@@ -24,7 +26,8 @@ export default new Router({
             name: 'home',
             component: Home,
             redirect: '/index',
-            children: [{
+            children: [
+                {
                     path: '/index',
                     name: 'index',
                     component: Index,
@@ -45,6 +48,11 @@ export default new Router({
             path: '/cart',
             name: 'cart',
             component: Cart,
+        },
+        {
+            path: '/login',
+            name: 'login',
+            component: Login,
         },
         {
             path: '/order',

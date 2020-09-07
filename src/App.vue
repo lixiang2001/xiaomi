@@ -13,24 +13,34 @@ export default {
       res:{}
     }
   },
+
   mounted(){
-    //请求本地文件中的json数据文件      因为是json静态文件所有在public下创建的mock文件存储json数据
-    // this.axios.get('/mock/user/info.json').then((response)=>{
-    //   this.res = response;
-    // })
-
-    //请求easyMock中的模拟接口数据
-    // this.axios.get('/member/list').then((res)=>{
-    //   console.log(res);
-    //   this.res = res;
-    // })
-
-    //使用继承mockApi进行模拟数据  在src创建mock文件下封装的mockApi   特定就是请求的时候会被拦截所有notwoke下面是没有请求记录的
-    this.axios.get('/user/info').then((res)=>{
-      this.res = res
-    })
+    if(this.$cookie.get('userid')){
+        this.getUser();
+        this.getcartCount();
+    }
     
   },
+
+  methods:{
+    //在这里调用这两个方法的原因就是 vuex刷新页面数据就会清空 ，所以刷新页面时先在这里获取数据重新存入vuex中
+
+      //获取用户信息 
+      getUser(){
+        this.axios.get('/user').then((res={})=>{
+            this.$store.dispatch('setUserName',res.username);
+        })
+      },
+
+      //获取用户购物车的商品数量   第一次调用该方法
+      getcartCount(){
+          this.axios.get('/carts/products/sum').then((res=0)=>{
+              this.$store.dispatch('setCartCount',res);
+          })
+      }
+      
+  },
+  
   name: 'App',
   components: {
 
@@ -38,13 +48,10 @@ export default {
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
+  @import './assets/scss/reset.scss';
+  @import './assets/scss/config.scss';
+  @import './assets/scss/mixin.scss';
+  @import './assets/scss/modal.scss';
+  @import './assets/scss/button.scss';
 </style>
