@@ -110,6 +110,7 @@ export default {
             getOrderDetail(){
                 this.axios.get(`/orders/${this.orderId}`).then((res)=>{
                     let item = res.shippingVo;
+                   // console.log(item);
                     this.addressInfo = `${item.receiverName} ${item.receiverMobile} ${item.receiverProvince} 
                                         ${item.receiverCity} ${item.receiverDistrict} ${item.receiverAddress}`;
                     this.orderDetail = res.orderItemVoList;                    

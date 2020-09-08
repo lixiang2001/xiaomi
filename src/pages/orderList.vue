@@ -55,7 +55,7 @@
 
           <!-- elementUI 中的分页组件 -->
           <el-pagination
-          v-if="false"
+          v-if="true"
           class="pagination"
           background
           layout="prev, pager, next"
@@ -66,15 +66,16 @@
           </el-pagination>
 
           <!-- 点击加载数据  -->
-          <div class="load-more">
+          <div class="load-more" v-if="false">
               <el-button type="primary" :loading="loading" @click="loadMore1()" v-if="showNextpage">加载更多</el-button>
           </div>
 
           <!-- 滚动加载数据 组件 -->
           <div class="scroll-more" 
               v-infinite-scroll="loadMore"             
-              infinite-scroll-disabled="busy"
+              infinite-scroll-disabled="true"
               infinite-scroll-distance=120
+              v-if="false"
           >
               <!-- 滚动加载 请求数据是显示 动态svg图片、 -->
               <img src="/imgs/loading-svg/loading-spinning-bubbles.svg" alt="" v-show="loading">
