@@ -147,7 +147,7 @@ export default {
             closePayModal(){
                 this.showPay = false;
                 this.showPayModal = true;  
-                clearInterval(this.T);
+                clearInterval(this.T);      //关闭支付转态轮询
             },
 
             //轮询当前订单支付状态

@@ -180,6 +180,10 @@
         v-bind:showModal="showModal"
         @submit="goToCart"
         @cancel="showModal = false">
+
+
+
+        
         <template v-slot:body>
             <p>添加商品成功</p>
         </template>
@@ -337,7 +341,7 @@ export default {
           selected:true
       }).then((res)=>{
            this.showModal= true;
-           this.$store.dispatch('setCartCount',res.cartTotalQuantity);
+           this.$store.dispatch('setCartCount',res.cartTotalQuantity);       //更新购物车商品数量
       }).catch(()=>{
           this.showModal= true;
       })

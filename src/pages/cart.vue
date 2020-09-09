@@ -125,6 +125,9 @@ export default {
                 selected,
             }).then((res)=>{
                 this.renderData(res);
+                console.log(res);         
+                //cartTotalQuantity
+                this.$store.dispatch('setCartCount',res.cartTotalQuantity);
             })
         },
 

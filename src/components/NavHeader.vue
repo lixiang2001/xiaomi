@@ -146,7 +146,7 @@ export default {
     mounted(){
         this.getProductList();
         let Params = this.$route.params;
-        if(Params && Params.from){
+        if(Params && Params.from){          //只有从登陆页面跳转过来时才会 主动获取购物车商品数量
              this.getcartCount(); 
         }
        

@@ -53,7 +53,7 @@ axios.interceptors.response.use(function (response) {
     return Promise.reject(res);
   }   
 },
-(error)=>{     //第二个回调是拦截http状态码 进行判断
+(error)=>{     //第二个参数 回调是用于拦截http状态码 进行判断
     console.log(error);
     let res = error.response;
     console.log(res);

@@ -50,14 +50,16 @@
                 </p>
 
                 <div class="video-bg" @click="showslide = 'slideDown'"></div>
+
                 <div class="video-box">
                     <div class="overlay" v-if="showslide=='slideDown'"></div>
                     <div class="video" :class="showslide">
                         <span class="icon-close" @click="showslide = 'slideUp'"></span>
-                        <video src="/imgs/product/video.mp4"   controls></video>
+                        <video src="/imgs/product/video.mp4" controls></video>
                         <!-- muted  autoplay-->
                     </div>
                 </div>
+                
             </div>
 
         </div>
@@ -82,7 +84,7 @@
                         autoplay:true,
                         slidesPerView : 3,
                         spaceBetween : 30,
-                    freeMode:true,
+                        freeMode:true,
                         // slidesPerGroup : 2,         //一组2个
                         // slidesPerGroupSkip: 3,      //分成3组
 
@@ -100,6 +102,7 @@
                 }
 
             },
+
         name:"product",
         components:{
             ProductParam,
